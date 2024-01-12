@@ -4,11 +4,58 @@ import MyCard from './MyCard';
 
 function Home() {
 
-  const cardData = [
-    { date: '2024-01-02', price: 10000, ad: false, url: 'https://www.youtube.com/embed/kXHW6vvK3Ek?si=5dXtPrUTg_A13mGB'},
-    { date: '2024-01-01', price: 20000, ad: true, url: 'https://www.youtube.com/embed/kXHW6vvK3Ek?si=5dXtPrUTg_A13mGB'},
-    // ...
-  ];
+
+
+
+  const [cardData, setcardData] = useState([
+  {
+    title: "타이틀1",
+    date: '2024-01-06',
+    price: 10000,
+    ad: false,
+    url: 'https://www.youtube.com/embed/kXHW6vvK3Ek?si=5dXtPrUTg_A13mGB',
+    percent: 60,
+    summary: "인기 동영상 '타이틀1'이 출시되었습니다. 가격은 10,000원이며 광고는 포함되지 않았습니다."
+  },
+  {
+    title: "타이틀2",
+    date: '2024-01-04',
+    price: 20000,
+    ad: true,
+    url: 'https://www.youtube.com/embed/kXHW6vvK3Ek?si=5dXtPrUTg_A13mGB',
+    percent: 40,
+    summary: "광고가 포함된 '타이틀2'가 출시되었습니다. 가격은 20,000원이며 할인율은 40%입니다."
+  },
+  {
+    title: "타이틀3",
+    date: '2024-01-03',
+    price: 10000,
+    ad: false,
+    url: 'https://www.youtube.com/embed/kXHW6vvK3Ek?si=5dXtPrUTg_A13mGB',
+    percent: 70,
+    summary: "인기 동영상 '타이틀3'이 출시되었습니다. 가격은 10,000원이며 할인율은 70%입니다."
+  },
+  {
+    title: "타이틀4",
+    date: '2024-01-02',
+    price: 20000,
+    ad: true,
+    url: 'https://www.youtube.com/embed/kXHW6vvK3Ek?si=5dXtPrUTg_A13mGB',
+    percent: 100,
+    summary: "'타이틀4'는 특별한 이벤트로 인해 100% 할인 중입니다. 지금 확인하세요!"
+  },
+  {
+    title: "타이틀5",
+    date: '2024-01-01',
+    price: 10000,
+    ad: false,
+    url: 'https://www.youtube.com/embed/kXHW6vvK3Ek?si=5dXtPrUTg_A13mGB',
+    percent: 20,
+    summary: "인기 동영상 '타이틀5'가 새해를 맞아 20% 할인된 가격에 출시되었습니다."
+  }
+]
+);
+
     cardData.sort((a, b) => new Date(a.date) - new Date(b.date));
 
 
@@ -92,7 +139,7 @@ function Home() {
         <div class="container">
             <div id="cardslist">
       {cardData.map((data, index) => (
-        <MyCard key={index} date={data.date} price={data.price} ad={data.ad} url={data.url}/>
+        <MyCard key={index} title={data.title} date={data.date} price={data.price} ad={data.ad} url={data.url} percent={data.percent} summary={data.summary}/>
       ))}
 
             </div>

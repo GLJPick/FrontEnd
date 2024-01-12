@@ -152,3 +152,15 @@ ul{
     margin-bottom: 10px;
     font-size: x-large;
 }
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #dedede;
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+.obj-items{
+    margin: 20px 0px;
+}

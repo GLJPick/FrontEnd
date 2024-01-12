@@ -1,7 +1,22 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import styled from 'styled-components';
+
+
 
 function MyCard(props) {
+
+  const Bar = styled.div`
+  
+      width: ${props => props.width || '10'}%;
+    height: 30px;
+    padding: 0;
+    text-align: center;
+    background-color: #4F98FF;
+    color: #111;
+    `;
+   
+
   return (
     <Card>
       <Card.Body>
@@ -26,17 +41,23 @@ function MyCard(props) {
 
                         </div>   
                         <div class="col">
-                            <span class="badge badge-warning">유료</span>
+                            {props.ad&&<span class="badge badge-warning">유료</span>}
                             <ul class="object-list">
-                                <li class="obj-items"></li>
-                                <li class="obj-items"></li>
-                                <li class="obj-items"></li>
-                                <li class="obj-items"></li>
-                                <li class="obj-items"></li>
+                                <li class="obj-items">  {props.title}</li>
+                                
+                                <li class="obj-items">  {props.date}</li>
+                                <li class="obj-items">  {props.summary}</li>
+                               
+
 
 
                             </ul>
+                            <div class="progress-bar">           
+                          <Bar width={props.percent} />
+
+</div>
                         </div> 
+                        
                         </div>
                         
         </Card.Text>
