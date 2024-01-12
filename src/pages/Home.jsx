@@ -1,7 +1,38 @@
 import './Home.css';
+import { useState } from 'react';
 import axios from 'axios';
+import MyCard from './MyCard';
 
 function Home() {
+
+  const cardData = [
+    { date: '2024-01-02', price: 10000, ad: false },
+    { date: '2024-01-01', price: 20000, ad: true },
+    // ...
+  ];
+    cardData.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+
+  const [keyword, setKeyword] = useState('');
+  const [minval, setMinval] = useState(0);
+  const [maxval, setMaxval] = useState(0);
+  const [IncludeAd, setIncludeAd] = useState(true);
+
+  const handleInputKeyword = e => {
+    setKeyword(e.target.value);
+  }
+
+
+  const handleIncludeAd = e => {
+    setIncludeAd(!IncludeAd);
+  }
+
+
+  const SearchSubmitFunc = e => {
+    e.preventDefault();
+    console.log(keyword);
+    console.log(IncludeAd);
+  }
     
     return (
 <>
@@ -20,48 +51,42 @@ function Home() {
     <div class="col-lg-8">
         <div class="container">
             <label for="keyword">KeyWord</label>
-            <input type="text" class="input"id="keyword" name="keyword" placeholder="키워드를 입력하세요."></input>
+            <input type="text" class="input"id="keyword" name="keyword" placeholder="키워드를 입력하세요." onChange={handleInputKeyword}></input>
         </div>
-        <div class="container">
-            <label for="value">가격</label>
-            <input type="text" class="input"id="min" name="min" placeholder="최소금액을 입력하세요."></input>
-            <span id="wave"><b>~</b></span>
-            <input type="text" class="input"id="max" name="max" placeholder="최대금액을 입력하세요."></input>
-        </div>
+
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <form action="/action_page.php">
                         <div class="form-check-inline">
                         <label class="form-check-label" for="check">
-                            <input type="checkbox" class="form-check-input" id="check1" name="vehicle1" value="something" checked />유료 광고 포함 
+                            <input type="checkbox" class="form-check-input" id="check1" name="vehicle1" value="something" checked={IncludeAd} onChange={handleIncludeAd}/>유료 광고 포함 
                         </label>
                         </div>
-                    </form>
                 </div>
-                <div class="col" id="select">
-                    <form action="#">
-                        <label for="filter">Filter</label>
-                        <select name="filters" id="filter">
-                            <option selected>SELECT</option>
-                            <option value="lastest">최신순</option>
-                            <option value="view">조회순</option>
-                        </select>
-                    </form>
-                </div>
+     
             </div>
         </div>
         <div class="container">
-            <button type="button" id="submit">검색하기</button>  
+            <button type="button" id="submit" onClick={SearchSubmitFunc}>검색하기</button>  
+        </div>
+                <div id="select">
+            <form action="#">
+                <label for="filter">Filter</label>
+                <select name="filters" id="filter">
+                    <option selected>SELECT</option>
+                    <option value="lastest">최신순</option>
+                    <option value="view">조회순</option>
+                </select>
+            </form>
         </div>
         <div class="container">
             <div id="cardslist">
-                <div class="alert alert-info alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>INFO!</strong> card 들어가는 공간!
-                </div>
+      {cardData.map((data, index) => (
+        <MyCard key={index} date={data.date} price={data.price} ad={data.ad} />
+      ))}
             </div>
         </div>
+       
     </div>
     <div class="col-lg-4" id="favorites">
         <h2 id="fav"><span><img src={require("./img/fav.png")} id="fav-img" width="30" height="30"></img></span>FAVORITES</h2>

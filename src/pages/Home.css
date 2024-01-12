@@ -26,6 +26,9 @@
 #keyword{
     width: 80%;
 }
+#options{
+    box-shadow: 5px 5px 5px 5px lightgray;
+}
 #filter{
     border-radius: 10px;
     padding: 8px;
@@ -57,7 +60,7 @@ label{
     background-color: black;
     color: white;
     display:block;
-    
+    margin-bottom:10px;
 }
 #submit:hover{
     width: 100%;
@@ -76,7 +79,9 @@ label{
 
 #favorites{
     background-color: mintcream;
+    border-radius: 20px;
     padding : 20px;
+    box-shadow: 5px 5px 5px 5px lightgray inset;
 }
 
 ul{
@@ -88,4 +93,28 @@ ul{
     font-family: sans-serif;
     font-size: 20px;
     margin: 30px 0px;
+}
+
+.card{
+    background-color: white;
+    width : auto;
+    height: auto;
+    margin : 5px;
+}
+
+.card:hover{
+    box-shadow: 5px 5px 5px 3px lightgray;
+}
+.thumbnail{
+    float:center;
+}
+
+.badge badge-warning{
+    font-size: 100px;
+}
+
+.badge{
+    margin-top:5px;
+    margin-bottom: 10px;
+    font-size: x-large;
 }
