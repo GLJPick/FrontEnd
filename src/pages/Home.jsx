@@ -1,13 +1,12 @@
 import './Home.css';
 import { useState } from 'react';
-import axios from 'axios';
 import MyCard from './MyCard';
 
 function Home() {
 
   const cardData = [
-    { date: '2024-01-02', price: 10000, ad: false },
-    { date: '2024-01-01', price: 20000, ad: true },
+    { date: '2024-01-02', price: 10000, ad: false, url: 'https://www.youtube.com/embed/kXHW6vvK3Ek?si=5dXtPrUTg_A13mGB'},
+    { date: '2024-01-01', price: 20000, ad: true, url: 'https://www.youtube.com/embed/kXHW6vvK3Ek?si=5dXtPrUTg_A13mGB'},
     // ...
   ];
     cardData.sort((a, b) => new Date(a.date) - new Date(b.date));
@@ -34,6 +33,17 @@ function Home() {
     console.log(IncludeAd);
   }
     
+  const BarChart = ({ value, max }) => {
+  const width = Math.round((value / max) * 100);
+  return (
+    <div className="w-full h-4 bg-gray-200 rounded-full">
+      <div className="h-full text-center text-xs text-white bg-blue-500 rounded-full" style={{ width: `${width}%` }}>
+        {value}
+      </div>
+    </div>
+  );
+};
+
     return (
 <>
     <nav class="navbar">
@@ -82,8 +92,9 @@ function Home() {
         <div class="container">
             <div id="cardslist">
       {cardData.map((data, index) => (
-        <MyCard key={index} date={data.date} price={data.price} ad={data.ad} />
+        <MyCard key={index} date={data.date} price={data.price} ad={data.ad} url={data.url}/>
       ))}
+
             </div>
         </div>
        

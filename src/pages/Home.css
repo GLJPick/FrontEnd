@@ -4,13 +4,37 @@
     border-bottom: 5px solid lightgray;
     box-shadow: 5px 5px 5px 5px lightgray inset;
 }
+
 .navbar{
     background-color: rgb(84, 129, 70);
 }
-.nav-item{
-    color : white;
+#help{
     font-family: sans-serif;
-    font-size : 20px;
+    font-size: 25px;
+    font-weight: 700;
+    color : white;
+    cursor: default;
+}
+#help:hover{
+    position: relative;
+}
+#help:after{
+    content: "사용방법은 다음과 같습니다! 원하는 키워드를 적고 옵션을 선택하면, 해당 키워드와 관련된 유튜브 내용들을 정리해서 원하는 정렬 순서로 보여줍니다.\A 각 유튜브 영상별로 보여주는 정보로는 영상 url, 요약 내용, 시청자 반응(긍정도), 유료광고 여부, 업로드 날짜가 있습니다.";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+	color: #FFFFFF;
+	font-size: 15px;
+	z-index: 9999;
+    padding: 10px;
+    width: 400px;
+    position: absolute;
+    opacity: 0;
+    top:90%;
+}
+#help:hover::after{
+	top: 130%;
+	right: 0;
+	opacity: 1;
 }
 .nav-brand{
     text-align : center;
@@ -70,11 +94,15 @@ label{
     font-family: sans-serif;
     border-color: black;
 }
-
+#select{
+    border-bottom: 3px solid lightgray;
+    border-top: 3px solid lightgray;
+    padding: 10px;
+    margin-top: 20px;
+}
 #fav{
     font-weight: 700;
     font-family: sans-serif;
-    margin-bottom: 20px;
 }
 
 #favorites{
@@ -95,22 +123,28 @@ ul{
     margin: 30px 0px;
 }
 
-.card{
+.card:nth-child(odd){
     background-color: white;
+    border-radius: 10px;
     width : auto;
     height: auto;
-    margin : 5px;
+    margin : 15px 8px;
+
+}
+.card:nth-child(even){
+    background-color: mintcream;
+    border-radius: 10px;
+    width : auto;
+    height: auto;
+    margin : 15px 8px;
 }
 
 .card:hover{
     box-shadow: 5px 5px 5px 3px lightgray;
 }
 .thumbnail{
-    float:center;
-}
-
-.badge badge-warning{
-    font-size: 100px;
+    float: center;
+    border-radius: 20px;
 }
 
 .badge{

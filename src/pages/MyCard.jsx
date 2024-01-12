@@ -5,7 +5,6 @@ function MyCard(props) {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>{props.date}</Card.Title>
         <Card.Text>
             {/* <div class="row">
                         <div class="col"></div>
@@ -23,7 +22,7 @@ function MyCard(props) {
 
                         <div class="row">
                         <div class="col">
-                                    <iframe width="300" height="300" src="https://www.youtube.com/embed/kXHW6vvK3Ek?si=5dXtPrUTg_A13mGB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="300" height="300" src={props.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                         </div>   
                         <div class="col">
@@ -32,6 +31,10 @@ function MyCard(props) {
                                 <li class="obj-items"></li>
                                 <li class="obj-items"></li>
                                 <li class="obj-items"></li>
+                                <li class="obj-items"></li>
+                                <li class="obj-items"></li>
+
+
                             </ul>
                         </div> 
                         </div>
