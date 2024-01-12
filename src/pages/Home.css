@@ -5,6 +5,15 @@
     box-shadow: 5px 5px 5px 5px lightgray inset;
 }
 
+.jumbotron img {
+    transform: scale(1.0); /* 이미지 확대 */
+    transition: transform .5s; /* 시간 설정 */
+}
+.jumbotron img:hover {
+    transform: scale(0.8);   /* 이미지 확대 */
+    transition: transform .5s;
+}
+
 .navbar{
     background-color: rgb(84, 129, 70);
 }
@@ -15,9 +24,14 @@
     color : white;
     cursor: default;
 }
+
 #help:hover{
     position: relative;
+    border-radius: 10px;
+    border : 3px dashed white;
+    padding : 8px;
 }
+
 #help:after{
     content: "사용방법은 다음과 같습니다! 원하는 키워드를 적고 옵션을 선택하면, 해당 키워드와 관련된 유튜브 내용들을 정리해서 원하는 정렬 순서로 보여줍니다.\A 각 유튜브 영상별로 보여주는 정보로는 영상 url, 요약 내용, 시청자 반응(긍정도), 유료광고 여부, 업로드 날짜가 있습니다.";
     position: absolute;
@@ -49,6 +63,7 @@
 
 #keyword{
     width: 80%;
+     margin-bottom : 10px;
 }
 #options{
     box-shadow: 5px 5px 5px 5px lightgray;
@@ -75,7 +90,6 @@ label{
     border : None;
     padding : 10px;
     white-space: nowrap;
-
 }
 
 #submit{
@@ -116,35 +130,54 @@ ul{
     list-style-image: url("img/right.png");
 }
 
+li:after{
+    display:block;
+    content: '';
+    border-bottom: solid 6px rgb(251, 255, 0);  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+li:hover:after { 
+    transform: scaleX(1); 
+} 
+
+
 .fav-item{
-    margin : 10px;
     font-family: sans-serif;
     font-size: 20px;
     margin: 30px 0px;
+    font-weight: 700;
 }
 
 .card:nth-child(odd){
     background-color: white;
     border-radius: 10px;
+    
     width : auto;
     height: auto;
-    margin : 15px 8px;
+    display:inline-block;
+    margin : 23px 0px;
+    margin-left : 25px;
 
 }
 .card:nth-child(even){
     background-color: mintcream;
     border-radius: 10px;
+ 
     width : auto;
     height: auto;
-    margin : 15px 8px;
+    display:inline-block;
+    margin : 23px 0px;
+    margin-left : 25px;
+ 
 }
 
 .card:hover{
     box-shadow: 5px 5px 5px 3px lightgray;
 }
+
 .thumbnail{
     float: center;
-    border-radius: 20px;
 }
 
 .badge{
@@ -153,14 +186,7 @@ ul{
     font-size: x-large;
 }
 
-.progress-bar {
-    width: 100%;
-    height: 30px;
-    background-color: #dedede;
-    font-weight: 600;
-    font-size: .8rem;
-}
-
 .obj-items{
     margin: 20px 0px;
+    font-weight: 600;
 }

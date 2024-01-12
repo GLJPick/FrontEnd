@@ -16,6 +16,16 @@ function MyCard(props) {
     color: #111;
     `;
    
+      const handleClick = (title) => {
+        if(!props.favoriteList.includes(title))
+        {
+        props.setfavoriteList([...props.favoriteList, title]);
+        
+        }
+        if(props.favoriteList.length>=6){
+          props.favoriteList.shift();
+        }
+  };
 
   return (
     <Card>
@@ -43,13 +53,11 @@ function MyCard(props) {
                         <div class="col">
                             {props.ad&&<span class="badge badge-warning">유료</span>}
                             <ul class="object-list">
-                                <li class="obj-items">  {props.title}</li>
+                                <li class="obj-items" onClick={() => handleClick(props.title)}>  {props.title}</li>
                                 
                                 <li class="obj-items">  {props.date}</li>
                                 <li class="obj-items">  {props.summary}</li>
                                
-
-
 
                             </ul>
                             <div class="progress-bar">           
