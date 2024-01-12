@@ -24,33 +24,36 @@
 }
 
 #keyword{
-    width: auto;
+    width: 80%;
 }
-
+#filter{
+    border-radius: 10px;
+    padding: 8px;
+}
 label{
     font-size: 20px;
     font-family: sans-serif;
     margin : 5px;
     padding : 5px;
     font-weight : 700;
-    border-radius: 25px;
-    border: 5px solid rgb(84, 129, 70);
 }
 
 .container{
     margin :20px;
 }
 
-#keyword{
-    border-radius: 25px;
+.input{
+    border-radius: 20px;
     background-color: lightgray;
     border : None;
     padding : 10px;
+    white-space: nowrap;
 
 }
 
 #submit{
     width: 100%;
+    border-radius: 20px;
     background-color: black;
     color: white;
     display:block;
@@ -60,5 +63,29 @@ label{
     width: 100%;
     background-color: white;
     color : black;
+    font-weight: 700;
+    font-family: sans-serif;
     border-color: black;
+}
+
+#fav{
+    font-weight: 700;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+
+#favorites{
+    background-color: mintcream;
+    padding : 20px;
+}
+
+ul{
+    list-style-image: url("img/right.png");
+}
+
+.fav-item{
+    margin : 10px;
+    font-family: sans-serif;
+    font-size: 20px;
+    margin: 30px 0px;
 }
