@@ -32,25 +32,30 @@ function Home() {
             </div>
         </div>
     </div>
-        <div class="container">
+ <div class="container">
         <form action="/action_page.php">
             <div class="form-check-inline">
               <label class="form-check-label" for="check1">
-                <input type="checkbox" class="form-check-input" id="check1" name="vehicle1" value="something" checked />Option 1
+                <input type="checkbox" class="form-check-input" id="check1" name="vehicle1" value="something" checked />유료 광고 포함 
               </label>
             </div>
-            <div class="form-check-inline">
-              <label class="form-check-label" for="check2">
-                <input type="checkbox" class="form-check-input" id="check2" name="vehicle2" value="something" />Option 2
-              </label>
-            </div>
-            <div class="form-check-inline">
-                <label class="form-check-label" for="check3">
-                  <input type="checkbox" class="form-check-input" id="check3" name="vehicle3" value="something" />Option 3
-                </label>
-              </div>
-            <button type="submit" class="badge badge-light">Submit</button>
           </form>
+    </div>
+    <div class="container">
+        <input type="text" id="min" name="min" placeholder="최소금액을 입력하세요."></input>
+        <input type="text" id="max" name="max" placeholder="최대금액을 입력하세요."></input>
+    </div>
+    <div class="container">
+        <button type="button" id="submit">검색하기</button>  
+    </div>
+    <div class="container">
+        <div id="cardslist">
+            <h5><mark>List</mark><span class="badge badge-primary" id="date"></span></h5>
+            <div class="alert alert-info alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>INFO!</strong> card 들어가는 공간!
+            </div>
+        </div>
     </div>
 </>
     )
