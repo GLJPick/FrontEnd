@@ -13,7 +13,7 @@ function MyCard(props) {
     padding: 0;
     text-align: center;
     background-color: #4F98FF;
-    color: #111;
+    color: #ffffff;
     `;
    
       const handleClick = (title) => {
@@ -47,6 +47,7 @@ function MyCard(props) {
 
                         <div class="row">
                         <div class="col">
+                          {/* <img width="300" height="300" src={props.url} /> */}
                                     <iframe width="300" height="300" src={props.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                         </div>   
@@ -61,7 +62,8 @@ function MyCard(props) {
 
                             </ul>
                             <div class="progress-bar">           
-                          <Bar width={props.percent} />
+                          <Bar width={props.percent}>호감도 {props.percent}%</Bar>
+                          
 
 </div>
                         </div> 

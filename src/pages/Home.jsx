@@ -88,13 +88,13 @@ const [favoriteList, setfavoriteList] = useState([]);
     {
         paid = 'any';
     }
-    axios.post('https://9b7909fa-129b-442d-84d5-e84ea9575cab.mock.pstmn.io/api/submit', {title: keyword, videoPaidProductPlacement: paid})
+    axios.post('https://33808ac7-8579-4330-989f-c8a0aa9c271b.mock.pstmn.io/api/submit', {title: keyword, videoPaidProductPlacement: paid})
     .then(function(response) {
         console.log("Success");
     }).catch(function(error) {
         console.error(error);
     }).then(
-        axios.post('https://9b7909fa-129b-442d-84d5-e84ea9575cab.mock.pstmn.io/api/video-result')
+        axios.post('https://33808ac7-8579-4330-989f-c8a0aa9c271b.mock.pstmn.io/api/video-result')
         .then(function(response) {
             console.log(response.data);
             setcardData(response.data);
